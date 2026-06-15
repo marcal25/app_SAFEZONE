@@ -1,0 +1,191 @@
+:root {
+  /* Paleta de Cores Tecnológica e de Segurança */
+  --primary: #1a56db;    /* Azul Tech vibrante */
+  --secondary: #1e40af;  /* Azul mais escuro para o hover */
+  --accent: #10b981;     /* Verde de confirmação/segurança */
+  
+  /* NOVAS CORES DE FUNDO NEON */
+  --dark: #020617;       /* Fundo quase preto para contraste neon */
+  --deep-blue: #0f172a;  /* Azul profundo */
+  --neon-blue: #00f2fe;  /* Azul neon brilhante */
+  --tech-glow: rgba(0, 242, 254, 0.3);
+  
+  --light: #f8fafc;
+  --glow: rgba(26, 86, 219, 0.4); 
+}
+
+/* Configuração Global do Plano de Fundo Neon e 3D */
+body {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  color: #e2e8f0; /* Texto claro para fundo escuro */
+  background-color: var(--dark);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* CAMADA DE FUNDO 3D (Perspectiva de Cidade Wireframe) */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  /* Imagem SVG embutida que simula uma rede tática/cidade wireframe 3D */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%231e293b' stroke-width='0.5' %3E%3Cpath d='M0 100 L1600 100 M0 200 L1600 200 M0 300 L1600 300 M0 400 L1600 400 M0 500 L1600 500 M0 600 L1600 600 M0 700 L1600 700'/%3E%3Cpath d='M100 0 L100 800 M200 0 L200 800 M300 0 L300 800 M400 0 L400 800 M500 0 L500 800 M600 0 L600 800 M700 0 L700 800 M800 0 L800 800 M900 0 L900 800 M1000 0 L1000 800 M1100 0 L1100 800 M1200 0 L1200 800 M1300 0 L1300 800 M1400 0 L1400 800 M1500 0 L1500 800'/%3E%3C/g%3E%3Cg stroke='%231a56db' stroke-width='1' stroke-opacity='0.15'%3E%3Cpath d='M800 400 L100 100 L100 700 Z M800 400 L1500 100 L1500 700 Z M800 400 L400 100 L1200 100 Z M800 400 L400 700 L1200 700 Z' fill='none'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -2; /* Atrás de tudo */
+}
+
+/* CAMADA DE DEGRADÊ NEON BLUR */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: 
+    radial-gradient(circle at 10% 10%, rgba(0, 242, 254, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(26, 86, 219, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.8) 0%, var(--dark) 100%);
+  z-index: -1; /* Entre a cidade 3D e o conteúdo */
+}
+
+/* Navbar Custom */
+.navbar {
+  background-color: rgba(2, 6, 23, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #1e293b !important;
+}
+.navbar-brand, .nav-link { color: #fff !important; }
+.nav-link:hover { color: var(--neon-blue) !important; }
+
+/* Ajuste Hero para fundo neon */
+.hero {
+  background: transparent; /* Remove gradiente antigo */
+  color: #fff;
+  padding: 100px 0 80px;
+  position: relative;
+}
+.hero h1 { font-weight: 800; font-size: 3rem; text-shadow: 0 0 15px rgba(0, 242, 254, 0.5); }
+.hero .lead { font-size: 1.25rem; opacity: .95; }
+
+/* EFEITOS DE HOVER NOS BOTÕES */
+.btn {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px var(--glow);
+}
+.btn-primary:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--tech-glow);
+}
+.btn-outline-light { border-color: rgba(255,255,255,0.5); }
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Botões escuras na seção clara agora precisam ser claras */
+.btn-outline-dark { 
+  color: #fff; 
+  border-color: rgba(255,255,255,0.5); 
+}
+.btn-outline-dark:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px var(--tech-glow);
+  background: #fff;
+  color: var(--dark);
+}
+
+/* EFEITOS DE HOVER NOS BOTÕES DO MOCKUP */
+.mockup-body .btn:hover {
+  transform: scale(1.03);
+}
+
+.feature-icon {
+  width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;
+  border-radius: 16px; background: var(--primary); color: #fff; font-size: 28px;
+  box-shadow: 0 4px 15px var(--glow);
+}
+
+.section-title { font-weight: 800; margin-bottom: 1.5rem; color: #fff; }
+.fs-5 { color: #cbd5e1; } /* Subtítulos claros */
+
+.problem-list li { margin-bottom: .8rem; font-size: 1.1rem; color: #94a3b8 !important; }
+
+/* EFEITOS DE HOVER NOS CARTÕES - Adaptados para tema escuro */
+.fun-card {
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.6); /* Semi-transparente tático */
+  backdrop-filter: blur(5px);
+  height: 100%;
+  transition: all 0.3s ease;
+  color: #cbd5e1;
+}
+.fun-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--neon-blue);
+  box-shadow: 0 12px 25px rgba(0, 242, 254, 0.2);
+}
+.fun-card h5 { color: #fff; }
+
+/* Mockup visual */
+.mockup {
+  background: #fff; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,.5);
+  max-width: 360px; margin: auto;
+  border: 2px solid #1e293b;
+}
+.mockup-header { background: #e9ecef; padding: 12px; border-bottom: 1px solid #dee2e6; display: flex; gap: 8px; align-items: center; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; }
+.dot.red { background: #ef4444; } .dot.yellow { background: #f59e0b; } .dot.green { background: #22c55e; }
+.mockup-body { padding: 20px; font-size: 14px; color: #333; }
+
+/* Seções antigamente claras agora escuras/transparentes */
+.bg-light { background-color: transparent !important; }
+
+/* Stack list */
+.list-group-item { color: #cbd5e1; border-color: #1e293b; }
+
+/* Forms */
+.form-control {
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid #1e293b;
+  color: #fff;
+}
+.form-control:focus {
+  background-color: #0f172a;
+  border-color: var(--neon-blue);
+  color: #fff;
+  box-shadow: 0 0 10px var(--tech-glow);
+}
+.form-label { color: #cbd5e1; }
+.text-muted { color: #94a3b8 !important; }
+
+footer {
+  background: rgba(2, 6, 23, 0.8);
+  color: #cbd5e1;
+  padding: 40px 0;
+  border-top: 1px solid #1e293b;
+}
+footer a { color: #fff; }
+
+#estatisticas .fun-card {
+  text-align: center;
+  border-left: 4px solid var(--primary);
+}
+
+#estatisticas h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ef4444;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}

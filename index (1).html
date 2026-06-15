@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>SafeZone — Segurança urbana em tempo real</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SafeZone: aplicativo que usa dados em tempo real, IA e colaboração entre usuários para identificar e prevenir situações de risco nas cidades.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">
+      <i class="bi bi-shield-check text-primary"></i> SafeZone
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#problemas">Problemas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#estatisticas">Estatísticas</a></li>
+        <li class="nav-item"><a class="nav-link" href="#funcionalidades">Funcionalidades</a></li>
+        <li class="nav-item"><a class="nav-link" href="#stack">Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+      <a class="btn btn-primary ms-lg-3" href="#" onclick="baixarApp(event)">Baixar App</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1>Segurança urbana em tempo real</h1>
+        <p class="lead mb-4">
+          SafeZone usa dados em tempo real, inteligência artificial e colaboração entre usuários para identificar e prevenir situações de risco nas cidades. O seu trajeto não precisa ser uma loteria.
+        </p>
+        <div class="d-flex gap-3">
+          <a class="btn btn-primary btn-lg" href="#" onclick="baixarApp(event)">Baixar agora</a>
+          <a class="btn btn-outline-light btn-lg" href="#funcionalidades">Conhecer funcionalidades</a>
+        </div>
+        <p class="mt-3 small">
+          Disponível para Android e iOS — protótipo em desenvolvimento.
+        </p>
+      </div>
+      <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0">
+        <div class="mockup">
+          <div class="mockup-header">
+            <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+          </div>
+          <div class="mockup-body">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <i class="bi bi-shield-check text-primary fs-3"></i>
+              <strong>SafeZone</strong>
+            </div>
+            <p class="small mb-2"><i class="bi bi-geo-alt-fill text-danger"></i> Área de risco detectada: Rua 12, centro</p>
+            <p class="small mb-3"><i class="bi bi-bell-fill text-warning"></i> Alerta: assalto relatado há 8 min</p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-sm btn-outline-danger"><i class="bi bi-exclamation-triangle"></i> Relatar ocorrência</button>
+              <button class="btn btn-sm btn-outline-success"><i class="bi bi-navigation-2"></i> Rotas seguras</button>
+              <button class="btn btn-sm btn-primary"><i class="bi bi-people"></i> Modo seguro</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Sobre o projeto</h2>
+    <p class="fs-5">A crescente urbanização e o aumento da circulação de pessoas nas cidades brasileiras têm trazido desafios significativos relacionados à segurança pública.</p>
+    <p class="fs-5">O <strong>SafeZone</strong> é uma plataforma inovadora que utiliza <strong>dados em tempo real</strong>, <strong>inteligência artificial</strong> e <strong>colaboração entre usuários</strong> para identificar e prevenir situações de risco.</p>
+    <p class="fs-5"><strong>Por que investir no SafeZone?</strong><br> Mais do que um aplicativo de GPS, nós criamos uma <strong>plataforma de vigilância preditiva</strong>. Os mapas convencionais são feitos para te levar do ponto A ao ponto B da maneira mais rápida. O SafeZone foi projetado para te levar da maneira mais <strong>segura</strong>. Nós mapeamos as vulnerabilidades das vias, cruzando denúncias em tempo real com estatísticas criminais, devolvendo às pessoas a liberdade e o direito fundamental de transitar pela própria cidade sem o medo constante de serem a próxima vítima.</p>
+  </div>
+</section>
+
+<section id="problemas" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Problemas identificados nas ruas</h2>
+    <div class="row">
+      <div class="col-lg-8">
+        <ul class="problem-list text-muted">
+          <li><strong>O perigo da rotina previsível:</strong> A maioria das pessoas percorre diariamente o exato mesmo caminho para ir trabalhar ou estudar, tornando-se alvos fáceis e previsíveis para criminosos que mapeiam esses horários.</li>
+          <li><strong>Aumento da violência direcionada:</strong> A ameaça constante de sequestros relâmpago focados no "Golpe do Pix", abordagens em pontos de ônibus vazios e cruzamentos mal iluminados.</li>
+          <li><strong>Falta de informação preventiva:</strong> Os cidadãos não têm como saber se a rua em que estão prestes a entrar teve um assalto reportado há 10 minutos.</li>
+          <li><strong>Baixa integração comunitária:</strong> Não há uma plataforma unificada onde moradores e transeuntes possam relatar instantaneamente suspeitas, formando uma rede de proteção local.</li>
+          <li><strong>Vulnerabilidade pós-abordagem:</strong> A dificuldade extrema de acionar a polícia discretamente durante um evento de coação sem colocar a própria vida em risco imediato.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="estatisticas" class="py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">A Realidade que Queremos Mudar</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="fun-card shadow-sm">
+          <h3>+1 Milhão</h3>
+          <h5 class="fw-bold">Celulares Roubados</h5>
+          <p class="text-muted mt-2">No Brasil, quase 1 milhão de aparelhos são subtraídos por ano. Isso representa em média <strong>2 roubos por minuto</strong>, a maioria ocorrendo nas vias públicas durante o trajeto rotineiro da vítima.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="fun-card shadow-sm">
+          <h3>60%</h3>
+          <h5 class="fw-bold">No Caminho do Trabalho</h5>
+          <p class="text-muted mt-2">Dados apontam que a maior parte dos assaltos a pedestres acontece no trajeto de rotina (casa-trabalho ou faculdade), explorando ruas com pouca iluminação e falhas no patrulhamento.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="fun-card shadow-sm">
+          <h3>300%</h3>
+          <h5 class="fw-bold">Aumento em Sequestros</h5>
+          <p class="text-muted mt-2">Com a digitalização financeira, houve uma explosão de crimes de coação rápida (sequestros do Pix), exigindo tecnologias urgentes para mascarar apps bancários e pedir socorro silencioso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="funcionalidades" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Funcionalidades principais</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="fun-card">
+          <div class="feature-icon mb-3"><i class="bi bi-map"></i></div>
+          <h5 class="fw-bold">Mapa inteligente</h5>
+          <p class="small text-muted mb-0">Integração visual de ruas com base em graus de segurança, evitando caminhos historicamente perigosos.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="fun-card">
+          <div class="feature-icon mb-3"><i class="bi bi-cpu"></i></div>
+          <h5 class="fw-bold">IA Preditiva</h5>
+          <p class="small text-muted mb-0">Algoritmos que cruzam dados de criminalidade passados para prever riscos futuros por zona e horário.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="fun-card">
+          <div class="feature-icon mb-3"><i class="bi bi-people-fill"></i></div>
+          <h5 class="fw-bold">Radar Colaborativo</h5>
+          <p class="small text-muted mb-0">Usuários alertam sobre ruas escuras, movimentos suspeitos e assaltos em tempo real ("Waze da segurança").</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="fun-card">
+          <div class="feature-icon mb-3 bg-danger" style="box-shadow: 0 4px 15px rgba(220,53,69,0.4);"><i class="bi bi-phone-vibrate"></i></div>
+          <h5 class="fw-bold">Fake Screen (Coação)</h5>
+          <p class="small text-muted mb-0">PIN de pânico que envia localização silenciosa à polícia e abre uma tela falsa para enganar criminosos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stack" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Nossa Stack Tecnológica</h2>
+    <p class="mb-4">Para garantir que o sistema não falhe no milissegundo em que uma vida está em risco, construímos uma arquitetura de alta disponibilidade, baixa latência e escalabilidade massiva.</p>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent"><strong><i class="bi bi-phone text-primary"></i> Frontend Mobile (React Native / Flutter):</strong> Interface fluida, garantindo acesso nativo aos sensores do celular (GPS de alta precisão, giroscópio) para detecção de anomalias em tempo real.</li>
+          <li class="list-group-item bg-transparent"><strong><i class="bi bi-hdd-network text-primary"></i> Backend em Golang:</strong> Essencial para concorrência brutal. O Go permite o gerenciamento de milhares de conexões de websockets simultâneas sem gargalos, enviando alertas de pânico com latência quase zero.</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent"><strong><i class="bi bi-braces text-primary"></i> Motor de Dados e IA (Python):</strong> Toda a análise de inteligência preditiva, Data Science e processamento dos mapas de calor é alimentada por scripts avançados em Python.</li>
+          <li class="list-group-item bg-transparent"><strong><i class="bi bi-database text-primary"></i> Banco de Dados (PostgreSQL + PostGIS):</strong> Buscas georreferenciadas ultrarrápidas, cruzando a localização do usuário com as zonas vermelhas e viaturas próximas instantaneamente.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Contato e download</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <form id="contact-form">
+          <div class="mb-3"><label class="form-label">Nome</label><input type="text" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">E-mail</label><input type="email" class="form-control" required></div>
+          <div class="mb-3"><label class="form-label">Mensagem (Interesse em investimento ou parceria)</label><textarea class="form-control" rows="4" required></textarea></div>
+          <button type="submit" class="btn btn-primary btn-lg w-100">Enviar Mensagem</button>
+        </form>
+      </div>
+      <div class="col-lg-5 offset-lg-1 mt-4 mt-lg-0 d-flex flex-column justify-content-center">
+        <h4 class="fw-bold mb-3" style="color: #fff;">Pronto para transformar a segurança?</h4>
+        <p class="text-muted">Acesse agora nosso protótipo em desenvolvimento e veja na prática como a tecnologia está protegendo rotinas.</p>
+        <button class="btn btn-outline-dark btn-lg mb-3" onclick="baixarApp(event)"><i class="bi bi-apple"></i> Testar no iOS (Web App)</button>
+        <button class="btn btn-outline-dark btn-lg" onclick="baixarApp(event)"><i class="bi bi-google-play"></i> Testar no Android (Web App)</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="small text-center mb-0">© 2026 SafeZone — Todos os direitos reservados. Plataforma colaborativa de segurança urbana.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
